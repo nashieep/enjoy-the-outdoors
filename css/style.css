@@ -42,6 +42,7 @@ video::-webkit-media-controls {
     background-color:rgb(65, 165, 124);
     color: whitesmoke;
 }
+
 .popup-form {
     display: none;
     position: fixed;
