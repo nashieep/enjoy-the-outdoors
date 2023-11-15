@@ -77,15 +77,12 @@ video::-webkit-media-controls {
 
 h2{
     font-size: 3.5em;
+    margin-top: 25%;
 	@media (max-width: 768px) {
 		font-size: 1.3em;
 	}
 }
-.container{
-    width: 3px;
-    margin: auto;
-    padding: 50px;
-}
+
 .HomepageNavs{
     background: greenyellow;
     width:100%;
@@ -96,15 +93,22 @@ h2{
     text-align: center;
 }
 .d-md-flex {
-    display: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
   
 footer{
     background-color: #ccc;
-    min-height: 100vh;
-    margin-top: auto;
+    margin-bottom: auto;
 }
 #shareicons{
-    width: 50px;
 padding: 10px;
+flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    /* position: fixed; */
+}
+.popup-form{
+    
 }
