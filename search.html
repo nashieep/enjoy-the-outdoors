@@ -36,6 +36,64 @@
         transform: translateY(-20px);
         transition: 0.4s ease-out;
       }
+      h1{
+        text-align: center;
+        --s: 0.1em;   /* the thickness of the line */
+  --c: #f2f3fa; /* the color */
+  
+  color: hsla(42, 97%, 12%, 0.733);
+  padding-bottom: var(--s);
+  background: 
+    linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: 0.5s;
+}
+      h1{
+        font-family: system-ui, sans-serif;
+  font-size: 5rem;
+  cursor: pointer;
+      }
+      h1:hover {--_p: 100%}
+      .navbar {
+        background-color: transparent !important;
+        border-color: transparent !important;
+       font-weight: bold;
+    }
+
+    .navbar-brand {
+        color: #fff; /* Set text color to white */
+    }
+
+    .navbar-brand .icon {
+        color: #fff; /* Set icon color to white */
+    }
+
+    .navbar-nav .nav-link {
+        color: #fff !important; /* Set link text color to white*/
+    }
+
+    .navbar-toggler-icon {
+        background-color: #fff; /* Set the color of the toggle icon to white */
+    }
+    .dropdown-menu {
+            background-color: transparent;
+            border: none !important;
+        }
+
+        .dropdown-menu a {
+            color:white; /* Set dropdown link text color to black */
+        }
+
+        .dropdown-menu a:hover {
+            transform: scaleY(1);
+          opacity: 1;
+        }
+        p{
+          font-weight: bold;
+          color: #f2f3fa;
+        }
   </style>
   </head>
   <body class="p-3 m-0 border-0 bd-example m-0 border-0">

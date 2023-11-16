@@ -14,14 +14,73 @@
   <style>
     body {
       background-image: url(./images/IMG-47.jpg);
+      background-repeat: no-repeat;
+      display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+    margin: 0;
     }
     h1,h3{
       color:azure;
+      text-align: center;
+      font-weight: bold;
+      font-palette: grays;
+      font-family: sans-serif;
+      base-palette: 9;
+    }
+    p{
+      color: white;
+      background-color: rgb(18, 197, 237);
     }
     #result{
-      color: beige;
+      color: white;
+    }
+    .footer{
+    margin-top: auto;
+    padding: 20px;
+    text-align: center;
+    }
+    .navbar {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        font-weight: bolder;
     }
 
+    .navbar-brand {
+        color: #fff; /* Set text color to white or your preferred color */
+    }
+
+    .navbar-brand .icon {
+        color: #fff; /* Set icon color to white or your preferred color */
+    }
+
+    .navbar-nav .nav-link {
+        color: #fff !important; /* Set link text color to white*/
+    }
+
+    .navbar-toggler-icon {
+        background-color: #fff; /* Set the color of the toggle icon to white */
+    }
+    .dropdown-menu {
+            background-color: transparent;
+            border: none !important;
+        }
+
+        .dropdown-menu a {
+            color:white; /* Set dropdown link text color to black */
+        }
+
+        .dropdown-menu a:hover {
+            transform: scaleY(1);
+          opacity: 1;
+        }
+#shareicons{
+padding: 10px;
+flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: auto;
+}
   </style>
 </head>
 

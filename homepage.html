@@ -10,6 +10,45 @@
   <title>Bootstrap Example</title>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script async src="https://cse.google.com/cse.js?cx=017643444788069204610:4gvhea_mvga"></script>
+  <style>
+    .navbar {
+        background-color: transparent !important;
+        border-color: transparent !important;
+    }
+
+    .navbar-brand {
+        color: #fff; /* Set text color to white or your preferred color */
+    }
+
+    .navbar-brand .icon {
+        color: #fff; /* Set icon color to white or your preferred color */
+    }
+
+    .navbar-nav .nav-link {
+        color: #fff !important; /* Set link text color to white*/
+    }
+
+    .navbar-toggler-icon {
+        background-color: #fff; /* Set the color of the toggle icon to white */
+    }
+    .dropdown-menu {
+            background-color: transparent;
+            border: none !important;
+        }
+
+        .dropdown-menu a {
+            color:white; /* Set dropdown link text color to black */
+        }
+
+        .dropdown-menu a:hover {
+            background-color: rgba(163, 32, 32, 0.1) !important; /* Set hover background color */
+        }
+        @media (max-width: 768px) {
+            .popup-form {
+                width: 80%;
+            }
+        }
+</style>
 </head>
 
 <body class="p-3 m-0 border-0 bd-example m-0 border-0">
@@ -47,7 +86,7 @@
   </nav>
   <div class="popup-form" id="popupForm">
     <form>
-      <h2>Sign up for our email list!</h2>
+      <h1 margin-top="100">Sign up for our email list!</h1>
       <p>Get news from Nature's Palette in your inbox.</p>
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
@@ -72,39 +111,32 @@
   <div class="HomepageNavs">
     <div class="">
       <div class="d-md-flex">
-        <nav class="HomepageNavs__Nav mb-3 mb-md-0" aria-labelledby="HomepageNavLabelPark">
-          <h2 class="HomepageNavs__Nav__Label">
-            <a id="HomepageNavLabelPark" href="./search.html" class="park_find">Find a Park</a>
-          </h2>
+        <nav class="HomepageNavs__Nav mb-3 mb-md-0" aria-labelledby="HomepageNavLabelPark"><h2 class="HomepageNavs__Nav__Label">Find a Park</h2>
           <div class="dropdown">
             <select id="list_locations">
               <option>By state...</option>
             </select>
           </div>
         </nav>
-        <div class="HomepageNavs__Divider">
-          <hr aria-hidden="true">OR
-          <hr aria-hidden="true">
+        <div class="HomepageNavs__Nav OR">
+        <hr> OR
+        <hr>
         </div>
-        <nav class="HomepageNavs__Nav" aria-labelledby="HomepageNavLabelTopic">
-          <h2 class="HomepageNavs__Nav__Label">
-            <a id="HomepageNavLabelTopic" href="./info.html" class="explore">Explore Mountains</a>
-          </h2>
-          <div class="dropdown">
-            <select id="mountainDropdown" onchange="displayMountainInfo()">
+        <nav class="HomepageNavs__Nav" aria-labelledby="HomepageNavLabelTopic"><h2 class="HomepageNavs__Nav__Label">Explore Mountains</h2>
+          <div class="dropdown"><select id="mountainDropdown" onchange="displayMountainInfo()">
               <option value="" disabled selected>Select a mountain</option>
             </select>
-
           </div>
         </nav>
       </div>
     </div>
   </div>
   <br>
-
+<div id="results"></div>
+<!--Image Carousel-->
   <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="1000">
+      <div class="carousel-item active" data-bs-interval="100">
         <img src="./images/IMG5.JPG" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item" data-bs-interval="100">
@@ -133,6 +165,7 @@
     </button>
   </div>
   <br>
+  <!-- footer -->
   <footer>
     <p>@Copyright Nature's Palette 2023- All Right Reserved.</p>
     <div id="shareicons">
@@ -163,10 +196,12 @@
   <!-- ion icon script -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!--Custom Scripts-->
   <script src="./scripts/popup.js"></script>
   <script src="./scripts/locationData.js"></script>
   <script src="./scripts/mountainData.js"></script>
   <script>
+    //dropdown with location data
     locationsArray.forEach(location => {
       let option = document.createElement("option")
       option.innerText = location
@@ -179,6 +214,15 @@
       let option = document.createElement("option");
       option.innerText = mountain.name;
       mountainDropdown.appendChild(option);
+    })
+    // Add event listener to handle dropdown selection
+    mountainDropdown.addEventListener("change", function() {
+        const selectedmountain = mountainsArray.find(mountain => mountain.name === mountainDropdown.value);
+        results.innerHTML =`<div class="card"> 
+          ${selectedmountain.name}
+          ${selectedmountain.elevation}
+          <img src="./images/${selectedmountain.img}">
+          </div>`
     })
   </script>
 </body>
